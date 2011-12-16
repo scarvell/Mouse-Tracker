@@ -1,0 +1,68 @@
+h1 Menztrual Mouse Tracker
+
+div(style="width:100%;height:100%;min-height: 500px;overflow:hidden;margin:auto;", id="zone")
+  div(class="player", id="me")
+
+
+script
+  var keys = 
+  {
+    left: '37',
+    up: '38',
+    right: '39',
+    down: '40'
+  };
+
+  $('body').keydown(function(e){
+    if(e.keyCode == keys.left)
+    {
+      // Move to the left
+      $('#clients').append("Move user to the LEFT").hide().fadeIn('slow').fadeOut('slow', function(){
+        $('#clients').html('');
+      });
+      
+    }
+    if(e.keyCode == keys.right)
+    {
+      // Move to the right
+      $('#clients').append("Move user to the RIGHT").hide().fadeIn('slow').fadeOut('slow', function(){
+        $('#clients').html('');
+      });
+    }
+    if(e.keyCode == keys.up)
+    {
+      // Move user up
+      $('#clients').append("Move user UP").hide().fadeIn('slow').fadeOut('slow', function(){
+        $('#clients').html('');
+      });
+    }
+    
+    if(e.keyCode == keys.down)
+    {
+      // Move down
+       $('#clients').append("Move user DOWN").hide().fadeIn('slow').fadeOut('slow', function(){
+          $('#clients').html('');
+        });
+    }
+  });
+   
+  $('body').mousemove(function(event){
+    var pos = {
+      x: event.pageX,
+      y: event.pageY
+    };
+    socket.emit('update_coords', pos);
+  });
+
+  socket.on('send_data', function(data){
+    var i=0;
+    $('#zone').html('');
+    while(i < data.length)
+    {
+      var me = '';
+      if( data[i].id == pl.id ) me = 'You';
+      player = '<div class="player" id="p_' + data[i].id + '" style="background: ' + data[i].color + '	;left:' + data[i].x + 'px;top:' + data[i].y +'px"> ' + me + '</div>';
+      $('#zone').append(player);
+      i++;
+    }
+  });

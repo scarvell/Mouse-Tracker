@@ -1,0 +1,32 @@
+!!!
+html
+  head
+    title Menztruals Stuff
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='socket.io/socket.io.js')
+    script(src='http://code.jquery.com/jquery-1.6.2.min.js')
+    script
+      var name = 'User' + Math.round(Math.random() * 255);
+      var r = Math.round(Math.random() * 255);
+      var g = Math.round(Math.random() * 255);
+      var b = Math.round(Math.random() * 255);
+      var cl = 'rgb('+r+','+g+','+b+')';
+
+      if(name == '') name = 'Anonymous';
+      var pl = 
+      {
+        id: 0,
+        name: name,
+        color: cl,
+        x: 0,
+        y: 0
+      };
+       
+      var socket = io.connect('http://10.1.1.4:3000');
+       
+      socket.on('connect', function () {
+        socket.emit('client_connected', pl);
+      });
+
+  body!= body
+      div(id="clients")
