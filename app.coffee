@@ -40,7 +40,6 @@ io.sockets.on 'connection', (socket) ->
     io.sockets.emit "send_data", m_players 
    
    socket.on 'update_coords', (pos) ->
-     
      for x in [0..m_players.length]
        if m_players[x].id == socket.id
          m_players[x].x = pos.x;
