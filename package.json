@@ -5,6 +5,8 @@
   , "dependencies": {
       "express": "2.4.3"
     , "jade": ">= 0.0.1"
-    , "socket.io": ">= 0.7.9"
+    , "socket.io": ">= 0.9.5"
+    , "websocket-client": "*"
+    , "uglify-js": "*"
   }
 }

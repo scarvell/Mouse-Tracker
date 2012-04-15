@@ -4,7 +4,7 @@ html
     title Menztruals Stuff
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='socket.io/socket.io.js')
-    script(src='http://code.jquery.com/jquery-1.6.2.min.js')
+    script(src='http://code.jquery.com/jquery-1.7.2.min.js')
     script
       var name = 'User' + Math.round(Math.random() * 255);
       var r = Math.round(Math.random() * 255);
@@ -22,7 +22,7 @@ html
         y: 0
       };
        
-      var socket = io.connect('http://10.1.1.4:3000');
+      var socket = io.connect('http://10.1.1.8:3000');
        
       socket.on('connect', function () {
         socket.emit('client_connected', pl);
