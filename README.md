@@ -5,12 +5,12 @@
 
 Make sure you have the latest node, coffee-script and npm installed. To run:
 
-    coffee app.coffee
+    $ coffee app.coffee
 
 You can install any missing dependencies with:
 
-    npm install -d
+    $ npm install -d
 
-Modify line 25 in views/layout.jade to point to the correct IP if you're testing with multiple computers:
+Modify line 25 in views/layout.jade to point to the correct IP of the server:
 
     var socket = io.connect('http://10.0.1.11:3000');
