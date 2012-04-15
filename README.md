@@ -1,10 +1,10 @@
-Mouse Tracker
-A nodejs socket mouse tracking application
+## Mouse Tracker
+   A nodejs socket mouse tracking application
 
-Installation
+##Installation
 
-Make sure you have the latest node and npm installed. To run:
-    node app.js 
+Make sure you have the latest node, coffee-script and npm installed. To run:
+    coffee app.coffee
 
 You can install any missing dependencies with:
     npm install -d
