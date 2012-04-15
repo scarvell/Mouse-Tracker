@@ -7,6 +7,10 @@ Make sure you have the latest node, coffee-script and npm installed. To run:
 
     $ coffee app.coffee
 
+For those coffee haters, I have compiled it to native javascript. To run:
+
+    $ node app.js
+
 You can install any missing dependencies with:
 
     $ npm install -d
