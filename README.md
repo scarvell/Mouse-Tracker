@@ -1,6 +1,8 @@
 ## Mouse Tracker
    A nodejs socket mouse tracking application
-
+   
+   Demo: https://www.youtube.com/watch?v=U_1Svs4c3i4
+   
 ##Installation
 
 Make sure you have the latest node, coffee-script and npm installed. To run:
